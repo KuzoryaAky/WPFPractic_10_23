@@ -15,8 +15,9 @@ namespace TestConsole
             message.Body = "Текст письма";
 
 
-            var client = new SmtpClient("smtp.yandex.ru", 465);
+            var client = new SmtpClient("smtp.yandex.ru", 25);
             client.EnableSsl = true;
+            client.Timeout = 1000;
 
             client.Credentials = new NetworkCredential 
             {
