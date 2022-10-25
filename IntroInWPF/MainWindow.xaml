@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:IntroInWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -34,9 +35,22 @@
                                     <ComboBoxItem>smtp.mail.ru:465</ComboBoxItem>
                                     <ComboBoxItem>smtp.gmail.com:587</ComboBoxItem>
                                 </ComboBox>
-                                <Button>Добавить</Button>
-                                <Button>Редактировать</Button>
-                                <Button>Убавить</Button>
+                                <Button>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Media/add.png" Height="16" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Добавить"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button ToolTip="Редактировать">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Media/edit.png" Height="16" Margin="0,0,5,0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button ToolTip="Удалить">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Media/remove.png" Height="19" Margin="0,0,5,0"/>
+                                    </StackPanel>
+                                </Button>
                             </ToolBar>
                             <ToolBar Header="Отправители" Band="1" BandIndex="0">
                                 <ComboBox MinWidth="120" MaxWidth="250" SelectedIndex="0">
@@ -44,18 +58,30 @@
                                     <ComboBoxItem>petrov@mail.ru</ComboBoxItem>
                                     <ComboBoxItem>sidirov@gmal.com</ComboBoxItem>
                                 </ComboBox>
-                                <Button>Добавить</Button>
-                                <Button>Редактировать</Button>
-                                <Button>Убавить</Button>
+                                <Button>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Height="12" Icon="Solid_PlusCircle" 
+                                                         Margin="0,0,5,0"
+                                                         Foreground="DarkBlue"/>
+                                        <TextBlock Text="Добавить"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit" Foreground="DarkOrange"/>
+                                <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Trash" Foreground="Red"/>
                             </ToolBar>
                             <ToolBar>
                                 <TextBlock Text="Перейти в планировщик" VerticalAlignment="Center"/>
-                                <Button>Перейти</Button>
+                                <Button fa:Awesome.Content="Regular_Clock" Foreground="DarkBlue"/>
                             </ToolBar>
                             <ToolBar Band="1" Header="Получатели">
-                                <Button Content="Создать"/>
-                                <Button Content="Редактировать"/>
-                                <Button Content="Перейти"/>
+                                <Button>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:ImageAwesome Height="12" Icon="Solid_PlusCircle" 
+                                                         Foreground="DarkBlue"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit" Foreground="DarkOrange"/>
+                                <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Trash" Foreground="Red"/>
                             </ToolBar>
                         </ToolBarTray>
                         <GroupBox Header="Список получателей" Margin="3">
