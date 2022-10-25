@@ -1,4 +1,5 @@
 ﻿using IntroInWPF.Models;
+using MeilSender.lib.Service;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,6 +13,7 @@ namespace IntroInWPF.Data
                 Name = $"Сервер-{i}",
                 Address = $"smtp.server{i}.com",
                 Login = $"Login-{i}",
+                Password = TextEncoder.Encode($"Password-{i}", 7),
                 UseSSL = i % 2 ==0
             })
             .ToList();
