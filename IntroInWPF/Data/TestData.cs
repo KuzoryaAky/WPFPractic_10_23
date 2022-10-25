@@ -30,7 +30,7 @@ namespace IntroInWPF.Data
                 Address = $"resepient_{i}@server.ru"
             })
             .ToList();
-        public static List<Messege> Masseges { get; set; } = Enumerable.Range(1, 10)
+        public static List<Messege> Messages { get; set; } = Enumerable.Range(1, 10)
             .Select(i => new Messege
             {
                 Title = $"Сообщение {i}",
